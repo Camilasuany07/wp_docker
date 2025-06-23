@@ -1,22 +1,23 @@
-# fly.toml app configuration file generated for wp-docker-crimson-wildflower-2008 on 2025-06-23T11:49:54-03:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'wp-docker-crimson-wildflower-2008'
-primary_region = 'gru'
+app = "wp-docker"
+primary_region = "gru"
 
 [build]
 
+[env]
+WORDPRESS_DB_NAME = "sql3786429"
+WORDPRESS_DB_USER = "sql3786429"
+WORDPRESS_DB_PASSWORD = "JSvZY4jVwM"
+WORDPRESS_DB_HOST = "sql3.freesqldatabase.com"
+
 [http_service]
-  internal_port = 8080
+  internal_port = 80
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = "stop"
   auto_start_machines = true
   min_machines_running = 0
-  processes = ['app']
+  processes = ["app"]
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
+  memory = "1gb"
+  cpu_kind = "shared"
   cpus = 1
